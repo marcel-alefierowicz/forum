@@ -6,30 +6,33 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
             <div class=" bg-slate-50 overflow-hidden shadow-xl sm:rounded-lg">
-                <div class= 'flex items-center justify-center h-screen '>
+                <div class= ''>
                     <form class="w-full max-w-lg" method="POST" action='{{ route('insert') }}'>
                       @csrf
-                        <div class="flex flex-wrap -mx-3 mb-6">
-                          <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                        <div class=" -mx-3 mb-6">
+                          <div class="w-full px-3 mb-6">
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                               Title
                             </label>
                             <input name='title' class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" />
                           </div>
-                          <div class="w-full md:w-1/2 px-3">
+                          <div class="w-full px-3 mb-6">
                             <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                              Content
                             </label>
-                            <textarea name='content' rows="5" class="appearance-none block h-10
+                            <textarea name='content' cols='15' rows="5" class="appearance-none block 
                                              w-full bg-gray-200 text-gray-700
                                             border border-gray-200 rounded py-3 px-4
                                              leading-tight focus:outline-none focus:bg-white
-                                              focus:border-gray-500" id="grid-last-name">
-                            </textarea>
-                            <button type='submit' class="bg-blue-500 hover:bg-blue-700 text-black font-bold py-2 px-4 rounded">
-                              Submit
+                                              focus:border-gray-500" id="grid-last-name"></textarea>
+                            
+                          </div>
+                          <div class="w-full px-3 mb-6">
+                            <button type='submit' class='shadow-lg rounded-md bg-indigo-300 text-white px-4 py-4'
+                            >
+                            submit
                             </button>
                           </div>
                         </div>
