@@ -25,4 +25,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard',
 Route::middleware(['auth:sanctum', 'verified'])->get('/add_post',
     [ForumController::class, 'AddPost'])->name('add');
 
-Route::post('/insert', [ForumController::class, 'insert'])->name('insert');
+Route::middleware(['auth:sanctum', 'verified'])->post('/insert',
+    [ForumController::class, 'insert'])->name('insert');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/delete/{id}',
+    [ForumController::class, 'delete'])->name('delete');
+

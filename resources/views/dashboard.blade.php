@@ -16,7 +16,7 @@
 
                             <span class='text-xs uppercase font-bold'>  on {{$post->created_at}} </span>
                         @if($post->username == Auth::user()->name or Auth::user()->administrator == 1)
-                            <a class='ml-6 text-xs text-red-900 uppercase font-bold'> delete </a>
+                            <a href='{{url('delete/'.$post->id)}}' class='ml-6 text-xs text-red-900 uppercase font-bold'> delete </a>
                         @endif
                         </h1>
 

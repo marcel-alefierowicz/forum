@@ -35,4 +35,11 @@ class ForumController extends Controller
         DB::table('posts')->insert($data);
         return Redirect('/dashboard');
     }
+    public function delete(Request $request){
+        $post = post::find($request -> id);
+        $post->delete();
+
+        return redirect('dashboard');
+    }
+
 }
