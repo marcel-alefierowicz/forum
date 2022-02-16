@@ -12,10 +12,16 @@ use Illuminate\Support\Facades\Auth;
 
 class ForumController extends Controller
 {
-    public function Homepage(){
-        $posts = post::all();
-
-
+    public function Homepage(Request $req){
+        
+        if($req -> term){
+            $term = $req->term;
+            $posts = post::where(
+                'title','LIKE',"%{$term}%")->get();
+        } else{
+            $posts = post::all();
+        }
+        
         return view('dashboard', compact('posts'));
     }
 

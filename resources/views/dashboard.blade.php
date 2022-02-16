@@ -4,9 +4,18 @@
             <h2 class="font-semibold  text-xl text-gray-800 leading-tight">
                 {{ __('Homepage') }}
             </h2>
+            <form action="{{ route('dashboard') }}" method="GET" role="search">
+                @csrf
+                    <div class="mt-2">
+                        <input class="border rounded shadow-lg border-gray-300 p-4  text-base leading-4 placeholder-gray-600 text-gray-600" type="email" name="" id="" placeholder="search for term" />
+                        <button class="shadow-lg border-red-900 rounded-md bg-indigo-300 text-white px-4 py-4" type="submit" title="">
+                           submit
+                        </button>
+                    </div>
+            </form>
         </x-slot>
     </div>
-    @foreach ($posts->reverse() as $post)
+    @foreach ($posts as $post)
         <div class="px-12 py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-slate-50 h-auto overflow-hidden shadow-xl sm:rounded-lg">
