@@ -31,3 +31,6 @@ Route::middleware(['auth:sanctum', 'verified'])->post('/insert',
 Route::middleware(['auth:sanctum', 'verified'])->get('/delete/{id}',
     [ForumController::class, 'delete'])->name('delete');
 
+Route::middleware(['auth:sanctum', 'verified'])->get('/user_posts',
+    [ForumController::class, 'user_posts'])->name('user_posts');
+

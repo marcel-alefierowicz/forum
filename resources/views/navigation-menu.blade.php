@@ -21,6 +21,11 @@
                         {{ __('Add a Post') }}
                     </x-jet-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{ route('user_posts') }}" :active="request()->routeIs('user_posts')">
+                        {{ __('Your Posts') }}
+                    </x-jet-nav-link>
+                </div>
             </div>
 
             <div class="hidden sm:flex sm:items-center sm:ml-6">
@@ -84,7 +89,7 @@
                                 </button>
                             @else
                                 <span class="inline-flex rounded-md">
-                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-indigo-300 hover:text-gray-700 focus:outline-none transition">
+                                    <button type="button" class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-indigo-100 hover:text-gray-700 focus:outline-none transition">
                                         @if (Auth::user()->administrator == 1)
                                         <span class="font-semibold text-red-300 "> ADMINISTRATOR -  {{ Auth::user()->name }} </span>                                        
                                             

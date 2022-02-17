@@ -47,5 +47,14 @@ class ForumController extends Controller
 
         return redirect('dashboard');
     }
+    public function user_posts(){
+        $username = Auth::user()->name;
+
+        $posts = post::where(
+            'username', '=',"{$username}"
+        )->get();
+
+        return view('user_posts', compact('posts'));
+    }
 
 }
